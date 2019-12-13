@@ -1,0 +1,23 @@
+"""Creates the test and traing sets from data read in from csv"""
+
+# Import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Import data from a csv
+dataset = pd.read_csv('data.csv')
+n_col = len(dataset.columns)
+X = dataset.iloc[:, :-1].values
+Y = dataset.iloc[:, n_col-1].values
+
+# Split dataset into training and test sets
+from sklearn.cross_validation import train_test_split
+test_size = 0.2
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = test_size)
+
+# Potentially need to do some Feature Scaling
+"""from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)"""
