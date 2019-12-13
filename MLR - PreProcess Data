@@ -1,4 +1,4 @@
-"""Creates the test and traing sets from data read in from csv"""
+"""Creates the test and traing sets, from data read in from a csv file"""
 
 # Import libraries
 import numpy as np
